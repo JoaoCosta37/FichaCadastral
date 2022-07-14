@@ -17,9 +17,11 @@ namespace FichaCadastro.Controllers
         {
             var session = sessionFactory.OpenSession();
 
-           var query = session.Query<SituacaoEmprego>();
+            var query = session.Get<SituacaoEmprego>(1);
 
-           var situacoes = query.ToList();
+
+
+           var situacoes = query;
 
             return View();
         }
