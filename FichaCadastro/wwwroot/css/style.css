@@ -1,0 +1,110 @@
+﻿
+* {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+.main-container {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+}
+
+.container-menu {
+    height: 100%;
+    width: 18vw;
+}
+
+    .container-menu .container-logo {
+        height: 7.5vh;
+        margin: 1.25vh 0;
+        display: flex;
+        font-size: 1.2em;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 1em #646569;
+    }
+
+        .container-menu .container-logo a {
+            text-decoration: none;
+            color: #646569
+        }
+
+    .container-menu .menu {
+        height: 100%;
+    }
+
+.item {
+    height: 6vh;
+    margin: 30px 10px;
+    font-size: 1em;
+    display: flex;
+    justify-content: CENTER;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 1em #646569;
+}
+
+.sub-item {
+    height: 5vh;
+    margin: 20px 25px;
+    font-size: .9em;
+    display: none;
+    justify-content: center;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 1em #646569;
+}
+
+.container-content {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    height: 7.5vh;
+    margin: 1.25vh 0;
+    box-shadow: 0 0 1em #646569;
+}
+
+    .navbar button {
+        background-color: #fafafa;
+        width: 10vw;
+        height: 100%;
+        border: none;
+        margin: auto 15px;
+        color: #2b1b50;
+        font-size: .9em;
+        cursor: pointer;
+    }
+
+.container-frame {
+    width: 100%;
+}
+
+#iframe {
+    width: 100%;
+    height: 80vh;
+    margin: 0;
+    border: NONE;
+}
+
+.container-footer {
+    background-color: #f2f2f2;
+}
+
+.selected {
+    display: flex;
+}

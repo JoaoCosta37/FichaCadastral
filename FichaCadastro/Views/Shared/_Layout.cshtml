@@ -5,55 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - FichaCadastro</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/style.css"/>
 </head>
 <body>
     <section class="main-container">
 
-    <section class="container-menu">
-        <div class="container-logo">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pastoral Social</a>
-        </div>
-        <div class="menu">
-            <ul class="menu-items">
-                <li class="item">
-                    Teste 1
-                </li>
-                <li class="item">
-                    Teste 2
-                </li>
-                <li class="item">
-                    Teste 3
-                </li>
-                <li class="item">
-                    Teste 4
-                </li>
-            </ul>
-        </div>
-    </section>
+        <section class="container-menu">
+            <div class="container-logo">
+                <b><a class="navbar-title"  asp-area="" asp-controller="Home" asp-action="Index">Pastoral Social</a></b>
+            </div>
+            <div class="menu">
+                <ul class="menu-items">
+                    <li id="novo-cadastro" class="item" id="novo-cadastro-iframe">
+                        Novo Cadastro
+                    </li>
+                    <li class="item has-son">
+                        Consulta
+                    </li>
+                    <li id="consulta-pessoa" class="sub-item" id="consulta-pessoa-iframe" >
+                        Consulta de Pessoa
+                    </li>
+                    <li id="consulta-familia" class="sub-item" id="consulta-familia-iframe">
+                        Consulta de Família
+                    </li>
+                    <li id="consulta-inativo" class="sub-item" id="consulta-familia-iframe">
+                        Consulta de Inativos
+                    </li>
+                    <li id="paroquias" class="item" id="paroquias-iframe">
+                        Paróquias
+                    </li>
+                </ul>
+            </div>
+        </section>
     <section class="container-content">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CadastroPessoa" asp-action="Index">Novo Cadastro</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Paroquias" asp-action="Index">Paróquias</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <nav class="navbar">
+                    <button id="home-iframe">
+                        <a style="text-decoration: none;" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </button>
+                    <button id="novo-cadastro-iframe">
+                        <a style="text-decoration: none;" asp-area="" asp-controller="CadastroFamilia" asp-action="Index">Novo Cadastro</a>
+                    </button>
+                    <button id="consulta-familia-iframe">
+                        <a style="text-decoration: none;" asp-area="" asp-controller="ConsultaFamilia" asp-action="Index">Consulta</a>
+                    </button>
+                </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -71,6 +67,10 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/script.js"></script>
+    <script type="text/javascript" src="~/js/menu-script.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

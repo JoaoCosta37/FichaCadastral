@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace FichaCadastro.Controllers
 {
-    public class CadastroPessoaController : Controller
+    public class CadastroFamiliaController : Controller
     {
         private readonly ISessionFactory sessionFactory;
 
-        public CadastroPessoaController(ISessionFactory sessionFactory)
+        public CadastroFamiliaController(ISessionFactory sessionFactory)
         {
             this.sessionFactory = sessionFactory;
         }
