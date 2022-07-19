@@ -1,4 +1,4 @@
-﻿using FichaCadastro.Models;
+﻿using FichaCadastro.Models.Entities;
 using NHibernate.Mapping;
 using NHibernate.Mapping.ByCode.Conformist;
 

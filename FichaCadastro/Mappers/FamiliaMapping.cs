@@ -1,24 +1,64 @@
-﻿namespace FichaCadastro.Mappers
+﻿using FichaCadastro.Models.Entities;
+using NHibernate.Mapping.ByCode.Conformist;
+
+namespace FichaCadastro.Mappers
 {
-    public class FamiliaMapping
+    public class FamiliaMapping : ClassMapping<Familia>
     {
-        //public FamiliaMapping()
-        //{
-        //    Table("T_FAMILIA");
+        public FamiliaMapping() 
+        {
+          Table("T_FAMILIA");
 
-        //    Id(x => x.Id).Column("ID_FAMILIA").GenerateBy.Assigned();
+            Id(x => x.Id,
+                  map => map.Column("ID_FAMILIA"));
 
-        //    Map(x => x.DescricaoFamilia).Column("DC_FAMILIA");
-        //    Map(x => x.QuantidadeAdultos).Column("QTD_ADULTOS");
-        //    Map(x => x.QuantidadeCrianca).Column("QTD_CRIANCAS");
-        //    Map(x => x.QuantidadeEmpregadosFamilia).Column("QTD_EMPREGADOS");
-        //    Map(x => x.RendaFamiliar).Column("VL_RENDA_FAMILIA");
-        //    Map(x => x.Endereço).Column("END_DC_FAMILIA");
-        //    Map(x => x.Complemento).Column("END_COMPLEMENTO_FAMILIA");
-        //    Map(x => x.Bairro).Column("END_BAIRRO_FAMILIA");
-        //    Map(x => x.Cep).Column("END_CEP_FAMILIA");
-        //    Map(x => x.CestaBasica).Column("FL_CESTA_BASICA");
-        //    Map(x => x.ResidenciaPropria).Column("FL_RESIDENCIA_PROPRIA");
-        //}
+            Property(x => x.IdResponsavel,
+            map => map.Column("ID_RESPONSAVEL"));
+
+            Property(x => x.QuantidadeAdultos,
+            map => map.Column("QTD_ADULTOS"));
+
+            Property(x => x.QuantidadeCriancas,
+            map => map.Column("QTD_CRIANCAS"));
+
+
+            Property(x => x.QuantidadeTrabalhadores,
+            map => map.Column("QTD_EMPREGADOS"));
+
+
+            Property(x => x.Cep,
+            map => map.Column("END_CEP_FAMILIA"));
+
+            Property(x => x.Logradouro,
+            map => map.Column("END_DC_FAMILIA"));
+
+            Property(x => x.NumeroEndereco,
+            map => map.Column("END_NUMERO"));
+
+            Property(x => x.Bairro,
+            map => map.Column("END_BAIRRO_FAMILIA"));
+
+            Property(x => x.Municipio,
+            map => map.Column("END_MUNICIPIO"));
+
+            Property(x => x.PontoReferencia,
+            map => map.Column("END_PONTO_REF"));
+
+            Property(x => x.Complemento,
+            map => map.Column("END_COMPLEMENTO_FAMILIA"));
+
+            Property(x => x.ResidenciaPropria,
+            map => map.Column("FL_RESIDENCIA_PROPRIA"));
+
+            Property(x => x.EstaRecebendoCestaBasica,
+            map => map.Column("FL_CESTA_BASICA"));
+
+            Property(x => x.RelatoVida,
+            map => map.Column("RELATO_VIDA"));
+
+            Property(x => x.Renda,
+            map => map.Column("VL_RENDA"));
+
+        }
     }
 }

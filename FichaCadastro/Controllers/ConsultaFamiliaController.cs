@@ -1,6 +1,8 @@
-﻿namespace FichaCadastro.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace FichaCadastro.Controllers
 {
-    public class ConsultaFamiliaController
+    public class ConsultaFamiliaController : Controller
     {
     }
 }

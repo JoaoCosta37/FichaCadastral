@@ -1,4 +1,5 @@
-﻿using FichaCadastro.Models;
+﻿using FichaCadastro.Models.Entities;
+using FichaCadastro.Models.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using NHibernate;
 using System.Linq;
@@ -7,23 +8,22 @@ namespace FichaCadastro.Controllers
 {
     public class CadastroFamiliaController : Controller
     {
-        private readonly ISessionFactory sessionFactory;
+        private readonly IFamiliaRepository familiaRepository;
 
-        public CadastroFamiliaController(ISessionFactory sessionFactory)
+        public CadastroFamiliaController(IFamiliaRepository familiaRepository)
         {
-            this.sessionFactory = sessionFactory;
+            this.familiaRepository = familiaRepository;
         }
         public IActionResult Index()
         {
-            var session = sessionFactory.OpenSession();
-
-            var query = session.Get<SituacaoEmprego>(1);
-
-
-
-           var situacoes = query;
-
+           var familias =  familiaRepository.GetAll();
             return View();
         }
+
+        public IActionResult Inserir()
+        {
+            return View();
+        }
+
     }
 }

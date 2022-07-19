@@ -1,4 +1,6 @@
+using FichaCadastro.Models.Repositories;
 using FichaCadastro.ORM;
+using FichaCadastro.ORM.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +31,14 @@ namespace FichaCadastro
 
 
             services.AddSingleton(typeof(ISessionFactory), sessionFactory);
+
+            services.AddScoped(typeof(ISession), (provider) =>
+            {
+                return sessionFactory.OpenSession();
+            });
+
+            services.AddScoped<IPessoaRepository, PessoaRepository>();
+            services.AddScoped<IFamiliaRepository, FamiliaRepository>();
 
             services.AddControllersWithViews();
         }

@@ -1,4 +1,4 @@
-﻿namespace FichaCadastro.Models
+﻿namespace FichaCadastro.Models.Entities
 {
     public class SituacaoEmprego
     {
