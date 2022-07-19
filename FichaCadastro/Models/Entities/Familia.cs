@@ -6,7 +6,7 @@
 
         public virtual int IdResponsavel { get; set; }
 
-        public virtual int QuantidadeAdultos { get; set; }
+        public virtual int QuantidadeMoradores { get; set; }
 
         public virtual int QuantidadeCriancas { get; set; }
 

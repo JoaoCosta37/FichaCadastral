@@ -15,8 +15,8 @@ namespace FichaCadastro.Mappers
             Property(x => x.IdResponsavel,
             map => map.Column("ID_RESPONSAVEL"));
 
-            Property(x => x.QuantidadeAdultos,
-            map => map.Column("QTD_ADULTOS"));
+            Property(x => x.QuantidadeMoradores,
+            map => map.Column("QTD_MORADORES"));
 
             Property(x => x.QuantidadeCriancas,
             map => map.Column("QTD_CRIANCAS"));

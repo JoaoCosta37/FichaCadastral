@@ -1,0 +1,27 @@
+﻿atividades João:
+
+	1 - DatePicker;
+	2 - MaskedTextInput;
+	3 - Combo-box;
+	4 - Radio-button;
+	5 - Check-box;
+
+	Desenvolver Tela de Cadastro de Pessoa;
+	Corrigir os bugs da migração;
+
+
+Atividades Rafael:
+	
+
+	Consulta de Família:
+
+	Colunas do Grid: NOME RESPONSÁVEL - RECEBE CESTA - ENDEREÇO - BAIRRO 
+
+
+Backlogs:
+
+	Inserir família na base;
+	Inserir Pessoa na Família;
+	Excluir Família;
+	Editar Família;
+	Editar Pessoa;
