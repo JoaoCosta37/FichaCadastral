@@ -14,9 +14,9 @@ namespace FichaCadastro.ORM
             this.session = session;
         }
 
-        public List<T> GetAll()
+        public IQueryable<T> GetAll()
         {
-           return this.session.Query<T>().ToList();
+           return this.session.Query<T>();
         }
 
         

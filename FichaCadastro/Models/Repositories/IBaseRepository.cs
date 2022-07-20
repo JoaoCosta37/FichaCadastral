@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace FichaCadastro.Models.Repositories
 {
     public interface IBaseRepository<T>
     {
-        List<T> GetAll();
+        IQueryable<T> GetAll();
     }
 }
