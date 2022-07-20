@@ -13,10 +13,7 @@
 Atividades Rafael:
 	
 
-	Consulta de Família:
-
-	Colunas do Grid: NOME RESPONSÁVEL - RECEBE CESTA - ENDEREÇO - BAIRRO 
-
+	Colocar o botão de editar no grid
 
 Backlogs:
 
