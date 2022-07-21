@@ -43,6 +43,10 @@
         mask: "(##) # #### - ####"
     });
 
+    $("#tel_number").kendoMaskedTextBox({
+        mask: "(##) #### - ####"
+    });
+
     $("#credit_card").kendoMaskedTextBox({
         mask: "#### #### #### ####"
     });
@@ -66,4 +70,13 @@
     // Masked Text END
     // Masked Text END
 
+    // Radio Button START
+    // Radio Button START
+
+    $('#f').kendoRadioButton({
+        label: "Feminino"
+    });
+    $('#m').kendoRadioButton({
+        label: "Masculino"
+    });
 })

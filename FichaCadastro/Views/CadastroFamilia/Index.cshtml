@@ -33,39 +33,47 @@
         </ul>
         <div>
             <div class="input-container ic1">
-                <input id="nome" name="" class="input" type="text" placeholder=" " />
+                <input id="nome" name="Responsavel.Nome" class="input" type="text" placeholder=" " />
                 <div class="cut"></div>
                 <label for="nome" class="placeholder">Nome Completo</label>
             </div>
             <div class="input-container ic2">
-                <input id="rg" class="input" type="text" placeholder=" " />
+                <input id="rg" name="Rg" class="input" type="text" placeholder=" " />
                 <div class="cut"></div>
                 <label for="rg" class="placeholder">RG</label>
             </div>
             <div class="input-container ic2">
-                <input id="cpf" class="input" type="text" placeholder=" " />
+                <input id="cpf" name="Cpf" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
                 <label for="cpf" class="placeholder">CPF</label>
             </div>
             <div class="input-container ic2">
-                <input id="datepicker" class="input" title="datepicker" style="width: 100%" placeholder=" " />
+                <input id="datepicker" name="DataNascimento" class="input" title="datepicker" style="width: 100%" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="data-nascimento" class="placeholder">Data de Nascimento *</label>
+                <label for="datepicker" class="placeholder">Data de Nascimento *</label>
             </div>
             <div class="input-container ic2">
-                <input id="phone_number celular" class="input" type="text" placeholder=" " />
+                <input id="phone_number" name="Celular" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="celular" class="placeholder">Celular</label>
+                <label for="phone_number" class="placeholder">Celular</label>
             </div>
             <div class="input-container ic2">
-                <input id="telefone" class="input" type="text" placeholder=" " />
+                <input id="tel_number" name="Telefone" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="telefone" class="placeholder">Telefone</label>
+                <label for="tel_number" class="placeholder">Telefone</label>
             </div>
             <div class="input-container ic2">
-                <input id="sexo" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="sexo" class="placeholder">Sexo</label>
+                @*<input id="sexo" name="Sexo" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="sexo" class="placeholder">Sexo</label>*@
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="Sexo" id="f" />
+                    </li>
+                    <li>
+                        <input type="radio" name="Sexo" id="m" />
+                    </li>
+                </ul>
             </div>
             <div class="input-container ic2">
                 <input id="sacramentos" class="input" type="text" placeholder=" " />
@@ -94,7 +102,7 @@
             </div>
         </div>
         <div>
-            <div class="input-container ic2">
+            <div class="input-container ic1">
                 <input id="endereco" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
                 <label for="endereco" class="placeholder">Endereço</label>
@@ -126,7 +134,7 @@
             </div>
         </div>
         <div>
-            <div class="input-container ic2">
+            <div class="input-container ic1">
                 <input id="renda-familia" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
                 <label for="renda-familia" class="placeholder">Renda Familiar</label>
