@@ -10,12 +10,4 @@
         current.css("text-decoration", "none");
     })
 
-
-    var itemsMenu = [
-        {
-            Description: "Novo Cadastro",
-            FrameRef: "./iframes/novo-cadastro.html"
-        }
-    ]
-
 })
