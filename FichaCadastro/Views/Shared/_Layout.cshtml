@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - FichaCadastro</title>
     <link href="https://kendo.cdn.telerik.com/2014.2.716/styles/kendo.common.min.css" rel="stylesheet" />
-<link href="https://kendo.cdn.telerik.com/2014.2.716/styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="https://kendo.cdn.telerik.com/2014.2.716/styles/kendo.default.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/style.css"/>
@@ -13,48 +13,48 @@
 <body>
     <section class="main-container">
 
-        <section class="container-menu">
-            <div class="container-logo">
+        <section class="navigation-container">
+           <div class="project-navigation">
+
+            <div class="logo-section">
                 <b><a class="navbar-title"  asp-area="" asp-controller="Home" asp-action="Index">Pastoral Social</a></b>
             </div>
-            <div class="menu">
+            <div class="navigation-section">
                 <ul class="menu-items">
                     <li id="novo-cadastro" class="item">
-                        Novo Cadastro
+                        <link style="text-decoration: none;" asp-area="" asp-controller="CadastroFamilia" asp-action="Index">Novo Cadastro</link>
                     </li>
                     <li class="item has-son">
                         Consulta
                     </li>
                     <li id="consulta-pessoa" class="sub-item">
-                        Consulta de Pessoa
+                        <link asp-area="" asp-controller="ConsultaFamilia" asp-action="Index">Consulta de Família/>
                     </li>
                     <li id="consulta-familia" class="sub-item">
-                        Consulta de Família
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Consulta de Pessoa</a>
                     </li>
                     <li id="consulta-inativo" class="sub-item">
-                        Consulta de Inativos
-                    </li>
-                    <li id="paroquias" class="item" id="paroquias-iframe">
-                        Paróquias
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Consulta de Inativos</a>
                     </li>
                 </ul>
             </div>
+           </div>
         </section>
-    <section class="container-content">
+    <section class="content-container">
     <header>
         <nav class="navbar">
                     <button id="home">
-                        <a style="text-decoration: none;" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="button-a"  asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </button>
                     <button id="novo-cadastro">
-                        <a style="text-decoration: none;" asp-area="" asp-controller="CadastroFamilia" asp-action="Index">Novo Cadastro</a>
+                        <a class="button-a"  asp-area="" asp-controller="CadastroFamilia" asp-action="Index">Novo Cadastro</a>
                     </button>
                     <button id="consulta-familia">
-                        <a style="text-decoration: none;" asp-area="" asp-controller="ConsultaFamilia" asp-action="Index">Consulta</a>
+                        <a class="button-a"  asp-area="" asp-controller="ConsultaFamilia" asp-action="Index">Consulta</a>
                     </button>
                 </nav>
     </header>
-    <div class="container">
+    <div class="page-content">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

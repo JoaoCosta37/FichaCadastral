@@ -1,13 +1,16 @@
 ﻿atividades João:
 
+https://demos.telerik.com/kendo-ui/datepicker/index
+
 	1 - DatePicker;
 	2 - MaskedTextInput;
 	3 - Combo-box;
 	4 - Radio-button;
 	5 - Check-box;
 
-	Desenvolver Tela de Cadastro de Pessoa;
+	Desenvolver Tela de Cadastro de Pessoa; - ATUAL
 	Corrigir os bugs da migração;
+	Colocar os names dos componentes identicos ao do Repositório;
 
 
 Atividades Rafael:

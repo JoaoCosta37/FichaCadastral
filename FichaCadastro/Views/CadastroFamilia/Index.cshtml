@@ -4,17 +4,7 @@
 <link rel="stylesheet" href="~/css/pages.css" />
 
 @section scripts{
-<script>
-    $(document).ready(function() {
-        $("#tabstrip").kendoTabStrip({
-            animation:  {
-                open: {
-                    effects: "fadeIn"
-                }
-            }
-        });
-    });
-</script>
+<script src="~/js/components.js"></script>
 }
 
 
@@ -23,7 +13,7 @@
     </div>
     <div class="form-body">
     </div>
-    <div class="title">Ficha de Cadastramento de Família</div>
+    <div class="title">Ficha de Cadastro de Família</div>
     <div class="subtitle">* campos com preenchimento obrigatório</div>
 
 
@@ -43,54 +33,62 @@
         </ul>
         <div>
             <div class="input-container ic1">
-                <input id="name" class="input" type="text" placeholder=" " />
+                <input id="nome" name="Responsavel.Nome" class="input" type="text" placeholder=" " />
                 <div class="cut"></div>
-                <label for="name" class="placeholder">Nome Completo</label>
+                <label for="nome" class="placeholder">Nome Completo</label>
             </div>
             <div class="input-container ic2">
-                <input id="" class="input" type="text" placeholder=" " />
+                <input id="rg" name="Rg" class="input" type="text" placeholder=" " />
                 <div class="cut"></div>
-                <label for="" class="placeholder">RG</label>
+                <label for="rg" class="placeholder">RG</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="cpf" name="Cpf" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">CPF</label>
+                <label for="cpf" class="placeholder">CPF</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="datepicker" name="DataNascimento" class="input" title="datepicker" style="width: 100%" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Data de Nascimento *</label>
+                <label for="datepicker" class="placeholder">Data de Nascimento *</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="phone_number" name="Celular" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Celular</label>
+                <label for="phone_number" class="placeholder">Celular</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="tel_number" name="Telefone" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Telefone</label>
+                <label for="tel_number" class="placeholder">Telefone</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Sexo</label>
+                @*<input id="sexo" name="Sexo" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="sexo" class="placeholder">Sexo</label>*@
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="Sexo" id="f" />
+                    </li>
+                    <li>
+                        <input type="radio" name="Sexo" id="m" />
+                    </li>
+                </ul>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="sacramentos" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Sacramentos</label>
+                <label for="sacramentos" class="placeholder">Sacramentos</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="profissao" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Profissão</label>
+                <label for="profissao" class="placeholder">Profissão</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="estado-civil" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Estado Civil</label>
+                <label for="estado-civil" class="placeholder">Estado Civil</label>
             </div>
             @*<div class="input-container ic2">
                 <input id="email" class="input" type="text" placeholder=" " />
@@ -98,21 +96,21 @@
                 <label for="email" class="placeholder">Nome do Conjuge</label>
                 </div>*@
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="situacao-emprego" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Situaçao Emprego</label>
+                <label for="situacao-emprego" class="placeholder">Situaçao Emprego</label>
             </div>
         </div>
         <div>
-            <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+            <div class="input-container ic1">
+                <input id="endereco" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Endereço</label>
+                <label for="endereco" class="placeholder">Endereço</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="numero" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Número</label>
+                <label for="numero" class="placeholder">Número</label>
             </div>
             <div class="input-container ic2">
                 <input id="email" class="input" type="text" placeholder=" " />
@@ -120,46 +118,46 @@
                 <label for="email" class="placeholder">CEP</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="bairro" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Bairro</label>
+                <label for="bairro" class="placeholder">Bairro</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="cidade" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Cidade</label>
+                <label for="cidade" class="placeholder">Cidade</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="complemento" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Complemento</label>
+                <label for="complemento" class="placeholder">Complemento</label>
             </div>
         </div>
         <div>
-            <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+            <div class="input-container ic1">
+                <input id="renda-familia" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Renda Familiar</label>
+                <label for="renda-familia" class="placeholder">Renda Familiar</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="quantidade-moradores" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Quantidade de moradores na casa</label>
+                <label for="quantidade-moradores" class="placeholder">Quantidade de moradores na casa</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="quantidade-crianca" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Quantidade de Crianças</label>
+                <label for="quantidade-crianca" class="placeholder">Quantidade de Crianças</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="recebe-cesta-basica" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Recebe cesta básica?</label>
+                <label for="recebe-cesta-basica" class="placeholder">Recebe cesta básica?</label>
             </div>
             <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
+                <input id="historia-vida" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">História de Vida</label>
+                <label for="historia-vida" class="placeholder">História de Vida</label>
             </div>
         </div>
     </div>
