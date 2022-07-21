@@ -12,7 +12,7 @@ namespace FichaCadastro.Mappers
             Id(x => x.Id,
                   map => map.Column("ID_FAMILIA"));
 
-            Property(x => x.IdResponsavel,
+            ManyToOne(x => x.Responsavel,
             map => map.Column("ID_RESPONSAVEL"));
 
             Property(x => x.QuantidadeMoradores,

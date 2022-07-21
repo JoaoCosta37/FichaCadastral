@@ -1,8 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FichaCadastro.Models.Repositories;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace FichaCadastro.Controllers
 {
     public class ConsultaFamiliaController : Controller
     {
+        private readonly IFamiliaRepository familiaRepository;
+
+        public ConsultaFamiliaController(IFamiliaRepository familiaRepository)
+        {
+            this.familiaRepository = familiaRepository;
+        }
+
+        public IActionResult Index()
+        {
+            var familias = familiaRepository.GetAll().Select(x => new
+            {
+                x.Responsavel.Nome, 
+                x.EstaRecebendoCestaBasica,
+                x.Logradouro,
+                x.NumeroEndereco,
+                x.Bairro
+            }).ToList();
+
+            return View(familias);
+        }
+
+
     }
 }
