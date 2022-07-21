@@ -10,46 +10,19 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" />
     <link rel="stylesheet" href="~/css/style.css" />
-
+    <script src="~/js/consulta-familia.js">  </script>
 
     <script>
 
 
-        $(document).ready(function() {
-        @Html.Raw(" const data = " + JsonConvert.SerializeObject(Model))
+$(document).ready(function() {
+    @Html.Raw(" const data = " + JsonConvert.SerializeObject(Model))
+
+        createGrid(data);
 
 
-                    const container = document.getElementById('grid-familia');
-            const hot = new Handsontable(container, {
-                data: data,
-                rowHeaders: true,
-                colHeaders: ['Responsável', 'Está recebendo cesta', 'Endereço', 'Número', 'Bairro'],
-                className: 'htLeft',
-                columns: [
-                    {
-                        data: 'Nome'
-                    },
-                    {
-                        data: 'EstaRecebendoCestaBasica',
-                        type: 'checkbox',
-                        className: 'htCenter'
-                    },
-                    {
-                        data: 'Logradouro',
-                    },
-                    {
-                        data: 'NumeroEndereco',
-                    },
-                    {
-                        data: 'Bairro',
-                    }
-                ],
-                dropdownMenu: true,
-                filters: true,
-                height: 'auto',
-                licenseKey: 'non-commercial-and-evaluation' // for non-commercial use only
-            });
-        });
+});
+        
 
 
     </script>

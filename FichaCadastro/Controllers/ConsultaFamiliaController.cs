@@ -17,6 +17,7 @@ namespace FichaCadastro.Controllers
         {
             var familias = familiaRepository.GetAll().Select(x => new
             {
+                IdFamilia = x.Id ,
                 x.Responsavel.Nome, 
                 x.EstaRecebendoCestaBasica,
                 x.Logradouro,

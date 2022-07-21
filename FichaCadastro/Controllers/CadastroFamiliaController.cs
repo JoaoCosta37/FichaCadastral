@@ -20,7 +20,7 @@ namespace FichaCadastro.Controllers
             return View();
         }
 
-        public IActionResult Inserir()
+        public IActionResult Inserir(Familia familia)
         {
             return View();
         }
