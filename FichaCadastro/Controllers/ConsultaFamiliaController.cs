@@ -15,7 +15,10 @@ namespace FichaCadastro.Controllers
 
         public IActionResult Index()
         {
-            var familias = familiaRepository.GetAll().Select(x => new
+            var familias = familiaRepository.GetAll()
+                //.Where(x => x.Bairro == "Quitauna")
+
+                .Select(x => new
             {
                 IdFamilia = x.Id ,
                 x.Responsavel.Nome, 

@@ -8,72 +8,75 @@
     <link href="https://kendo.cdn.telerik.com/2014.2.716/styles/kendo.default.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/style.css"/>
+    <link rel="stylesheet" href="~/css/style.css" />
+
 </head>
 <body>
     <section class="main-container">
 
         <section class="navigation-container">
-           <div class="project-navigation">
+            <div class="project-navigation">
 
-            <div class="logo-section">
-                <b><a class="navbar-title"  asp-area="" asp-controller="Home" asp-action="Index">Pastoral Social</a></b>
+                <div class="logo-section">
+                    <b><a class="navbar-title" asp-area="" asp-controller="Home" asp-action="Index">Pastoral Social</a></b>
+                </div>
+                <div class="navigation-section">
+                    <ul class="menu-items">
+                        <li id="novo-cadastro" class="item">
+                            <a style="text-decoration: none;" asp-area="" asp-controller="CadastroFamilia" asp-action="Index">Novo Cadastro</a>
+                        </li>
+                        <li class="item has-son">
+                            Consulta
+                        </li>
+                        <li id="consulta-pessoa" class="sub-item">
+                            <a asp-area="" asp-controller="ConsultaFamilia" asp-action="Index">Consulta de Família</a>
+                        </li>
+                        <li id="consulta-familia" class="sub-item">
+                            <a asp-area="" asp-controller="Home" asp-action="Index">Consulta de Pessoa</a>
+                        </li>
+                        <li id="consulta-inativo" class="sub-item">
+                            <a asp-area="" asp-controller="Home" asp-action="Index">Consulta de Inativos</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="navigation-section">
-                <ul class="menu-items">
-                    <li id="novo-cadastro" class="item">
-                        <link style="text-decoration: none;" asp-area="" asp-controller="CadastroFamilia" asp-action="Index">Novo Cadastro</link>
-                    </li>
-                    <li class="item has-son">
-                        Consulta
-                    </li>
-                    <li id="consulta-pessoa" class="sub-item">
-                        <link asp-area="" asp-controller="ConsultaFamilia" asp-action="Index">Consulta de Família/>
-                    </li>
-                    <li id="consulta-familia" class="sub-item">
-                        <a asp-area="" asp-controller="Home" asp-action="Index">Consulta de Pessoa</a>
-                    </li>
-                    <li id="consulta-inativo" class="sub-item">
-                        <a asp-area="" asp-controller="Home" asp-action="Index">Consulta de Inativos</a>
-                    </li>
-                </ul>
-            </div>
-           </div>
         </section>
-    <section class="content-container">
-    <header>
-        <nav class="navbar">
-                    <button id="home">
-                        <a class="button-a"  asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        <section class="content-container">
+            <header>
+                <nav class="navbar">
+                    <button type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </button>
-                    <button id="novo-cadastro">
-                        <a class="button-a"  asp-area="" asp-controller="CadastroFamilia" asp-action="Index">Novo Cadastro</a>
+                    <button type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <a asp-area="" asp-controller="CadastroFamilia" asp-action="Index">Novo Cadastro</a>
                     </button>
-                    <button id="consulta-familia">
-                        <a class="button-a"  asp-area="" asp-controller="ConsultaFamilia" asp-action="Index">Consulta</a>
+                    <button type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <a asp-area="" asp-controller="ConsultaFamilia" asp-action="Index">Consulta</a>
                     </button>
                 </nav>
-    </header>
-    <div class="page-content">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-    </section>
+            </header>
+            <div class="page-content">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </section>
     </section>
 
-   @* <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - FichaCadastro - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>*@
+
+    @section scripts{
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="~/js/script.js"></script>
-    <script type="text/javascript" src="~/js/menu-script.js"></script> 
+    <script type="text/javascript" src="~/js/menu-script.js"></script>
     <script type="text/javascript" src="https://kendo.cdn.telerik.com/2014.2.716/js/kendo.ui.core.min.js"></script>
+    }
+
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

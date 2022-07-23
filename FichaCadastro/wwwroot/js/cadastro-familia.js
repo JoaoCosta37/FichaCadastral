@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿function createForm() {
+ 
 
     //Tab - Strip START
     //Tab - Strip START
@@ -74,9 +75,18 @@
     // Radio Button START
 
     $('#f').kendoRadioButton({
-        label: "Feminino"
+        label: "Feminino",
+        checked: true
+
     });
     $('#m').kendoRadioButton({
         label: "Masculino"
     });
-})
+    ('#engine3').kendoRadioButton({
+        label: "2.0 Petrol, 147kW"
+    })
+    $('#engine4').kendoRadioButton({
+        label: "3.6 Petrol, 191kW",
+        enabled: false
+    })
+}

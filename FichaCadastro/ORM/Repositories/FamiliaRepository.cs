@@ -1,6 +1,7 @@
 ﻿using FichaCadastro.Models.Entities;
 using FichaCadastro.Models.Repositories;
 using NHibernate;
+using System.Linq;
 
 namespace FichaCadastro.ORM.Repositories
 {
@@ -9,5 +10,7 @@ namespace FichaCadastro.ORM.Repositories
         public FamiliaRepository(ISession session) : base(session)
         {
         }
+
+      
     }
 }

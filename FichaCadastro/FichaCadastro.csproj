@@ -12,6 +12,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="wwwroot\Images\brasao.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\Images\brasao.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\baixados.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NHibernate" Version="5.3.12" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
