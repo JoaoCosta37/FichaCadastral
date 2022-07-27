@@ -1,20 +1,23 @@
-﻿@using Newtonsoft.Json
+﻿@using FichaCadastro.JSonNetContract
+@using Newtonsoft.Json
 @{
     ViewData["Title"] = "Editar Cadastro de Família";
 }
 
-<div id="dadosFamilia"></div>
+<pre>
+<code id="jsonDisplay">
+
+    </code>
+
+</pre>
 
 @section scripts{
 <script>
     $(document).ready(function(){
-        @Html.Raw(" const familiaData = " + JsonConvert.SerializeObject(Model, Formatting.Indented, 
-new JsonSerializerSettings 
-{ 
-        ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-}));
+        @Html.Raw(" const familiaData = " + JsonConvert.SerializeObject(Model))
 
-        $('#dadosFamilia').val(familiaData);
+            $('#jsonDisplay').html(JSON.stringify(familiaData));
+       
     });
 
 </script>

@@ -1,6 +1,9 @@
+using AutoMapper;
+using FichaCadastro.Models.Entities;
 using FichaCadastro.Models.Repositories;
 using FichaCadastro.ORM;
 using FichaCadastro.ORM.Repositories;
+using FichaCadastro.ViewModel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,7 +31,25 @@ namespace FichaCadastro
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           var sessionFactory = NHibernateConfigurator.Configure();
+            adicionarNHibernate(services);
+
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Familia, FamiliaViewModel>().ReverseMap();
+            });
+
+
+            services.AddScoped<IMapper>((provider) =>
+            {
+                return config.CreateMapper();
+            });
+
+            services.AddControllersWithViews();
+        }
+
+        private static void adicionarNHibernate(IServiceCollection services)
+        {
+            var sessionFactory = NHibernateConfigurator.Configure();
 
 
             services.AddSingleton(typeof(ISessionFactory), sessionFactory);
@@ -41,10 +62,8 @@ namespace FichaCadastro
             services.AddScoped<IPessoaRepository, PessoaRepository>();
             services.AddScoped<IFamiliaRepository, FamiliaRepository>();
 
-            services.AddScoped<ISituacaoEmpregoRepository,SituacaoEmpregoRepository>();
+            services.AddScoped<ISituacaoEmpregoRepository, SituacaoEmpregoRepository>();
             services.AddScoped<IEstadoCivilRepository, EstadoCivilRepository>();
-
-            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
