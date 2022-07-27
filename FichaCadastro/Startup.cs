@@ -20,6 +20,7 @@ namespace FichaCadastro
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -39,6 +40,9 @@ namespace FichaCadastro
 
             services.AddScoped<IPessoaRepository, PessoaRepository>();
             services.AddScoped<IFamiliaRepository, FamiliaRepository>();
+
+            services.AddScoped<ISituacaoEmpregoRepository,SituacaoEmpregoRepository>();
+            services.AddScoped<IEstadoCivilRepository, EstadoCivilRepository>();
 
             services.AddControllersWithViews();
         }

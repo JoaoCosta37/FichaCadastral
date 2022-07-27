@@ -18,9 +18,10 @@ body {
 }
 
 .navigation-container {
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    background: linear-gradient(0deg, rgba(65,100,255,1) 5%, rgba(91,133,250,1) 20%, rgba(166,188,249,1) 65%);
     box-shadow: 0 0 2em #a6bcf9;
 }
 

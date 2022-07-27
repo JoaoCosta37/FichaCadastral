@@ -6,5 +6,7 @@ namespace FichaCadastro.Models.Repositories
     public interface IBaseRepository<T>
     {
         IQueryable<T> GetAll();
+
+        T Get(int key);
     }
 }

@@ -7,7 +7,7 @@ namespace FichaCadastro.Mappers
     {
         public EstadoCivilMapping()
         {
-            Table("T_ST_EMPREGO");
+            Table("T_ESTADO_CIVIL");
 
             Id(x => x.Id,
                map => map.Column("ID_ESTADO_CIVIL"));

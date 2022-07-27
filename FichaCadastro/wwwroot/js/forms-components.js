@@ -1,4 +1,4 @@
-﻿function createForm() {
+﻿function createForm(situacoesEmpregoData, estadoCivilData) {
  
 
     //Tab - Strip START
@@ -71,22 +71,24 @@
     // Masked Text END
     // Masked Text END
 
-    // Radio Button START
-    // Radio Button START
-
-    $('#f').kendoRadioButton({
-        label: "Feminino",
-        checked: true
-
+    $('#situacao-emprego').kendoComboBox({
+        dataTextField: "Descricao",
+        dataValueField: "Id",
+        dataSource: situacoesEmpregoData,
+        filter: "contains",
+        suggest: true,
+        index: 0
     });
-    $('#m').kendoRadioButton({
-        label: "Masculino"
+
+    $('#estado-civil').kendoComboBox({
+        dataTextField: "Descricao",
+        dataValueField: "Id",
+        dataSource: estadoCivilData,
+        filter: "contains",
+        suggest: true,
+        index: 0
     });
-    ('#engine3').kendoRadioButton({
-        label: "2.0 Petrol, 147kW"
-    })
-    $('#engine4').kendoRadioButton({
-        label: "3.6 Petrol, 191kW",
-        enabled: false
-    })
+
+
+
 }

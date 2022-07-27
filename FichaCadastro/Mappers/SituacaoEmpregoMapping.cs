@@ -10,7 +10,7 @@ namespace FichaCadastro.Mappers
         {
             Table("T_ST_EMPREGO");
 
-            Id(x => x.IdSituacao,
+            Id(x => x.Id,
                map => map.Column("ID_ST_EMPREGO"));
 
             Property(x => x.Descricao,

@@ -1,0 +1,22 @@
+﻿@using Newtonsoft.Json
+@{
+    ViewData["Title"] = "Editar Cadastro de Família";
+}
+
+<div id="dadosFamilia"></div>
+
+@section scripts{
+<script>
+    $(document).ready(function(){
+        @Html.Raw(" const familiaData = " + JsonConvert.SerializeObject(Model, Formatting.Indented, 
+new JsonSerializerSettings 
+{ 
+        ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+}));
+
+        $('#dadosFamilia').val(familiaData);
+    });
+
+</script>
+
+}

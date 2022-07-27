@@ -2,8 +2,8 @@
 
 namespace FichaCadastro.Models.Repositories
 {
-    public interface IPessoaRepository : IBaseRepository<Pessoa>
-    { 
+    public interface IEstadoCivilRepository : IBaseRepository<EstadoCivil>
+    {
 
     }
 }

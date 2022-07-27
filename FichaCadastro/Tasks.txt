@@ -9,8 +9,10 @@ https://demos.telerik.com/kendo-ui/datepicker/index
 	5 - Check-box;
 
 	Desenvolver Tela de Cadastro de Pessoa; - ATUAL
-	Corrigir os bugs da migração;
 	Colocar os names dos componentes identicos ao do Repositório;
+	Completar os componentes;
+	Colocar limitador nos campos;
+	Layout;
 
 
 Atividades Rafael:

@@ -44,18 +44,17 @@
         <section class="content-container">
             <header>
                 <nav class="navbar">
-                    <button type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </button>
-                    <button type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <a asp-area="" asp-controller="CadastroFamilia" asp-action="Index">Novo Cadastro</a>
-                    </button>
-                    <button type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <a asp-area="" asp-controller="ConsultaFamilia" asp-action="Index">Consulta</a>
-                    </button>
+                    <ul class="nav-items">
+                        <li>
+                            <a asp-area="" asp-controller="CadastroPessoa" asp-action="Index">Home</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="CadastroFamilia" asp-action="Index">Novo Cadastro</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="ConsultaFamilia" asp-action="Index">Consulta</a>
+                        </li>
+                    </ul>
                 </nav>
             </header>
             <div class="page-content">
@@ -67,16 +66,12 @@
     </section>
 
 
-    @section scripts{
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="~/js/script.js"></script>
     <script type="text/javascript" src="~/js/menu-script.js"></script>
     <script type="text/javascript" src="https://kendo.cdn.telerik.com/2014.2.716/js/kendo.ui.core.min.js"></script>
-    }
-
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

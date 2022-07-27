@@ -19,6 +19,10 @@ namespace FichaCadastro.ORM
            return this.session.Query<T>();
         }
 
-        
+        public T Get(int key)
+        {
+            return this.session.Get<T>(key);
+        }
+
     }
 }

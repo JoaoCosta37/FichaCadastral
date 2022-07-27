@@ -1,156 +1,107 @@
-﻿@{
+﻿@using Newtonsoft.Json
+@{
     ViewData["Title"] = "Cadastro de Pessoa";
 }
 <link rel="stylesheet" href="~/css/pages.css" />
-@section scripts{
-<script src="~/js/components.js"></script>
+<link rel="stylesheet" href="~/css/components.css" />
+
+
+@*@using (Html.BeginForm("Inserir", "CadastroPessoa", FormMethod.Post))*@
+@using (Html.BeginForm("Inserir", "CadastroFamilia", FormMethod.Post))
+{
+
+    <div class="form">
+        <div class="form-head">
+        </div>
+        <div class="form-body">
+        </div>
+        <div class="title">Cadastro de Pessoa</div>
+        <div class="subtitle">* campos com preenchimento obrigatório</div>
+
+        <div id="tabstrip">
+            <ul>
+                <li class="k-state-active">
+                    Dados da Pessoa
+                </li>
+            </ul>
+            <div>
+                <div class="input-container ic1">
+                    <input id="name" name="Nome" class="input" type="text" placeholder="" />
+                    <div class="cut"></div>
+                    <label for="name" class="placeholder">Nome Completo</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="rg" name="Rg" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="rg" class="placeholder">RG</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="cpf" name="Cpf" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="cpf" class="placeholder">CPF</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="data-nascimento" name="DataNascimento" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="data-nascimento" class="placeholder">Data de Nascimento *</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="celular" name="Celular" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="celular" class="placeholder">Celular</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="telefone" name="Telefone" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="telefone" class="placeholder">Telefone</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="sexo" name="Sexo" class="input" type="radio" placeholder="" value="M" /> Masculino
+                    <input id="sexo" name="Sexo" class="input" type="radio" placeholder="" value="F" /> Feminino
+                    <div class="cut cut-short">
+                    </div>
+                    <label for="sexo" class="placeholder">Sexo</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="sacramentos" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="sacramentos" class="placeholder">Sacramentos</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="profissao" name="Profissao" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="profissao" class="placeholder">Profissão</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="estado-civil" name="EstadoCivil.Id" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="estado-civil" class="placeholder">Estado Civil</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="situacao-emprego" name="SituacaoEmprego.Id" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="situacao-emprego" class="placeholder">Situaçao Emprego</label>
+                </div>
+            </div>
+        </div>
+
+        <input type="submit" class="submit" />
+
+    </div>
+
 }
 
- @using (Html.BeginForm("Inserir", "CadastroFamilia", FormMethod.Post))
-    {
+@section scripts{
+<script src="~/js/forms-components.js"> </script>
 
-<div class="form">
-    <div class="fomr-head">
-    </div>
-    <div class="form-body">
-    </div>
-    <div class="title">Cadastro de Pessoa</div>
-    <div class="subtitle">* campos com preenchimento obrigatório</div>
+<script>
 
+       $(document).ready(function () {
 
+            @Html.Raw(" const situacoesEmpregoData = " + JsonConvert.SerializeObject(ViewData["situacoesEmprego"]))
 
-    <div id="tabstrip">
-        <ul>
-            <li class="k-state-active">
-                Dados do Responsável
-            </li>
-            <li>
-                Endereço
-            </li>
-            <li>
-                Informações da Famália
-            </li>
-        </ul>
-        <div>
-            <div class="input-container ic1">
-                <input id="name" name="Responsavel.Nome" class="input" type="text" placeholder="" />
-                <div class="cut"></div>
-                <label for="name" class="placeholder">Nome Completo</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="rg" class="input" type="text" placeholder=" " />
-                <div class="cut"></div>
-                <label for="rg" class="placeholder">RG</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="cpf" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="cpf" class="placeholder">CPF</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="data-nascimento" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="data-nascimento" class="placeholder">Data de Nascimento *</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="celular" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="celular" class="placeholder">Celular</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="telefone" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="telefone" class="placeholder">Telefone</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="sexo" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="sexo" class="placeholder">Sexo</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="sacramentos" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="sacramentos" class="placeholder">Sacramentos</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="profissao" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="profissao" class="placeholder">Profissão</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="estado-civil" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="estado-civil" class="placeholder">Estado Civil</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="situacao-emprego" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="situacao-emprego" class="placeholder">Situaçao Emprego</label>
-            </div>
-        </div>
-        <div>
-            <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Endereço</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Número</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">CEP</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Bairro</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Cidade</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Complemento</label>
-            </div>
-        </div>
-        <div>
-            <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Renda Familiar</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="email" name="QuantidadeCriancas" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Quantidade de moradores na casa</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Quantidade de Crianças</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Recebe cesta básica?</label>
-            </div>
-            <div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">História de Vida</label>
-            </div>
-        </div>
-    </div>
+        createForm();
+    });
 
-     <input type="submit"  class="submit" /> 
-
-</div>
-
+</script>
 }

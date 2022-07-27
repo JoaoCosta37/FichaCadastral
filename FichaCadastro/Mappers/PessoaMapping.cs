@@ -7,7 +7,7 @@ namespace FichaCadastro.Mappers
     {
         public PessoaMapping()
         {
-            Table("T_DADOS_PESSOA");
+            Table("T_PESSOA");
 
 
             Id(x => x.Id,
