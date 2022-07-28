@@ -14,7 +14,7 @@
 
         public virtual string Cep { get; set; }
 
-        public virtual string Logradouro { get; set; }
+        public virtual string Endereco { get; set; }
 
         public virtual int NumeroEndereco { get; set; }
 

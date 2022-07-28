@@ -29,7 +29,7 @@ namespace FichaCadastro.Mappers
             Property(x => x.Cep,
             map => map.Column("END_CEP_FAMILIA"));
 
-            Property(x => x.Logradouro,
+            Property(x => x.Endereco,
             map => map.Column("END_DC_FAMILIA"));
 
             Property(x => x.NumeroEndereco,

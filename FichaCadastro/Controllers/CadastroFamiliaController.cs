@@ -42,6 +42,12 @@ namespace FichaCadastro.Controllers
         public IActionResult Inserir(Familia familia)
         {
             return View();
+            //complemento
+            //logradouro
+            //residencia propria
+            //sacramentos
+            //data de nascimento
+            //verificar description do Estado Civil e Situacao emprego
         }
 
     }
