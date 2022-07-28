@@ -22,25 +22,31 @@ namespace FichaCadastro.Controllers
             this.situacaoEmpregoRepository = situacaoEmpregoRepository;
             this.estadoCivilRepository = estadoCivilRepository;
         }
-        public IActionResult Index()
-        {
-            ViewData["situacoesEmprego"] = situacaoEmpregoRepository.GetAll();
-            ViewData["estadoCivil"] = estadoCivilRepository.GetAll();
-
-            return View();
-        }
 
 
         public IActionResult Editar(int idFamilia)
         {
            var familia = familiaRepository.Get(idFamilia);
-            var familiaVm = mapper.Map<FamiliaViewModel>(familia);
+           var familiaVm = mapper.Map<FamiliaViewModel>(familia);
 
-            return View(familiaVm);
+            ViewData["situacoesEmprego"] = situacaoEmpregoRepository.GetAll();
+            ViewData["estadoCivil"] = estadoCivilRepository.GetAll();
+
+            return View("EditarFamilia",familiaVm);
         }
 
-        public IActionResult Inserir(Familia familia)
+        public IActionResult Inserir()
         {
+            ViewData["situacoesEmprego"] = situacaoEmpregoRepository.GetAll();
+            ViewData["estadoCivil"] = estadoCivilRepository.GetAll();
+
+            return View("InserirFamilia");
+        }
+
+        public IActionResult Salvar(Familia familia)
+        {
+            familiaRepository.Salvar(familia);
+
             return View();
             //complemento
             //logradouro

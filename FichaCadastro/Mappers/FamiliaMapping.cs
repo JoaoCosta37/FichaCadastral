@@ -10,7 +10,11 @@ namespace FichaCadastro.Mappers
           Table("T_FAMILIA");
 
             Id(x => x.Id,
-                  map => map.Column("ID_FAMILIA"));
+                  map =>
+                  {
+                      map.Column("ID_FAMILIA");
+                      map.Generator(NHibernate.Mapping.ByCode.Generators.Identity);
+                  });
 
             ManyToOne(x => x.Responsavel,
             map => map.Column("ID_RESPONSAVEL"));

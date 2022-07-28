@@ -8,10 +8,8 @@ https://demos.telerik.com/kendo-ui/datepicker/index
 	4 - Radio-button;
 	5 - Check-box;
 
-	Desenvolver Tela de Cadastro de Pessoa; - ATUAL
-	Colocar os names dos componentes identicos ao do Repositório;
-	Completar os componentes;
-	Colocar limitador nos campos;
+	Completar os componentes da tela de Pessoa;
+	Trazer dados da tela de Editar;
 	Layout;
 
 

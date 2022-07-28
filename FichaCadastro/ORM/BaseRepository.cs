@@ -24,5 +24,9 @@ namespace FichaCadastro.ORM
             return this.session.Get<T>(key);
         }
 
+        public void Salvar(T entity)
+        {
+            this.session.SaveOrUpdate(entity);
+        }
     }
 }

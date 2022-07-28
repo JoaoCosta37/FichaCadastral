@@ -11,7 +11,11 @@ namespace FichaCadastro.Mappers
 
 
             Id(x => x.Id,
-               map => map.Column("ID_PESSOA"));
+               map =>
+               {
+                   map.Column("ID_PESSOA");
+                   map.Generator(NHibernate.Mapping.ByCode.Generators.Identity);
+               });
 
             Property(x => x.Nome,
              map => map.Column("NOME"));
