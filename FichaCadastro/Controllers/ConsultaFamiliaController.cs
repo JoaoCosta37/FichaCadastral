@@ -23,7 +23,7 @@ namespace FichaCadastro.Controllers
                 IdFamilia = x.Id ,
                 x.Responsavel.Nome, 
                 x.EstaRecebendoCestaBasica,
-                x.Logradouro,
+                x.Endereco,
                 x.NumeroEndereco,
                 x.Bairro
             }).ToList();

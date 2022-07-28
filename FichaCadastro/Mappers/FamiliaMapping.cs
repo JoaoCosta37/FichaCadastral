@@ -10,7 +10,11 @@ namespace FichaCadastro.Mappers
           Table("T_FAMILIA");
 
             Id(x => x.Id,
-                  map => map.Column("ID_FAMILIA"));
+                  map =>
+                  {
+                      map.Column("ID_FAMILIA");
+                      map.Generator(NHibernate.Mapping.ByCode.Generators.Identity);
+                  });
 
             ManyToOne(x => x.Responsavel,
             map => map.Column("ID_RESPONSAVEL"));
@@ -29,7 +33,7 @@ namespace FichaCadastro.Mappers
             Property(x => x.Cep,
             map => map.Column("END_CEP_FAMILIA"));
 
-            Property(x => x.Logradouro,
+            Property(x => x.Endereco,
             map => map.Column("END_DC_FAMILIA"));
 
             Property(x => x.NumeroEndereco,

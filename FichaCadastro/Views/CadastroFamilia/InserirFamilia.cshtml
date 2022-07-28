@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="~/css/pages.css" />
 <link rel="stylesheet" href="~/css/components.css" />
 
-@using (Html.BeginForm("Inserir", "CadastroFamilia", FormMethod.Post))
+@using (Html.BeginForm("Salvar", "CadastroFamilia", FormMethod.Post))
     {
 <div class="form">
     <div class="form-head">
@@ -49,7 +49,7 @@
             <div class="input-container ic2">
                 <input id="datepicker" name="Responsavel.DataNascimento" class="input" title="datepicker" style="width: 100%" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="datepicker" class="placeholder">Data de Nascimento *</label>
+                <label for="datepicker" class="placeholder">Data de Nascimento</label>
 
             </div>
             <div class="input-container ic2">
@@ -70,9 +70,14 @@
                 <label for="radioSexo" class="placeholder">Sexo</label>
             </div>
             <div class="input-container ic2">
-                <input id="sacramentos" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="sacramentos" class="placeholder">Sacramentos</label>
+                <input id="batismo" type="checkbox" value="true" name="Responsavel.Batizado" placeholder=" " />                
+                <label for="batismo">Batismo</label>
+                <input id="crisma" type="checkbox" value="true" name="Responsavel.Crismado" placeholder=" " />                
+                <label for="crisma">Crisma</label>
+                <input id="eucaristia" type="checkbox" value="true" name="Responsavel.PrimeiraEucaristia" placeholder=" " />                
+                <label for="eucaristia">Eucaristia</label>
+                <input id="matrimonio" type="checkbox" value="true" name="Responsavel.Matrimonio" placeholder=" " />                
+                <label for="matrimonio">Matrimônio</label>
             </div>
             <div class="input-container ic2">
                 <input id="profissao" name="Responsavel.Profissao" class="input" type="text" placeholder=" " />
@@ -122,7 +127,7 @@
                 <label for="municipio" class="placeholder">Município</label>
             </div>
             <div class="input-container ic2">
-                <input id="complemento" name="" class="input" type="text" placeholder=" " />
+                <input id="complemento" name="Complemento" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
                 <label for="complemento" class="placeholder">Complemento</label>
             </div>
@@ -131,13 +136,12 @@
                 <div class="cut cut-short"></div>
                 <label for="ponto-referencia" class="placeholder">Ponto de Referência</label>
             </div>
+            <div class="input-container ic2">
+                <input id="residencia-propria" value="true" name="ResidenciaPropria" type="checkbox" placeholder=" " checked/>
+                <label for="residencia-propria" class="placeholder">Residência Própria?</label>
+            </div>
         </div>
         <div>
-            <div class="input-container ic2">
-                <input type="checkbox" value="teste"/>
-                <div class="cut cut-short"></div>
-                <label for="quantidade-moradores" class="placeholder">Quantidade de moradores na casa</label>
-            </div>
             <div class="input-container ic1">
                 <input id="renda-familia" name="Renda" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
@@ -159,8 +163,7 @@
                 <label for="quantidade-trabalhadores" class="placeholder">Quantidade de Trabalhadores</label>
             </div>
             <div class="input-container ic2">
-                <input id="recebe-cesta-basica" name="EstaRecebendoCestaBasica" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
+                <input id="recebe-cesta-basica" value="true" name="EstaRecebendoCestaBasica" type="checkbox" placeholder=" " checked/>
                 <label for="recebe-cesta-basica" class="placeholder">Recebe cesta básica?</label>
             </div>
             <div class="input-container ic2">
@@ -172,7 +175,12 @@
     </div>
     <input type="submit" class="submit"/>
 
-    @section scripts{
+   
+</div>
+
+}
+
+ @section scripts{
 
     <script src="~/js/forms-components.js"> </script>
 
@@ -183,12 +191,8 @@
             @Html.Raw(" const situacoesEmpregoData = " + JsonConvert.SerializeObject(ViewData["situacoesEmprego"]))
             @Html.Raw(" const estadoCivilData = " + JsonConvert.SerializeObject(ViewData["estadoCivil"]))
 
-            createForm(situacoesEmpregoData, estadoCivilData);
+            createForm(situacoesEmpregoData, estadoCivilData,{});
         });
 
     </script>
     }
-</div>
-
-}
-

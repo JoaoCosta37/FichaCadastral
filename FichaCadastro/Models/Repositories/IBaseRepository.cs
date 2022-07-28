@@ -8,5 +8,7 @@ namespace FichaCadastro.Models.Repositories
         IQueryable<T> GetAll();
 
         T Get(int key);
+
+        void Salvar(T entity);
     }
 }
