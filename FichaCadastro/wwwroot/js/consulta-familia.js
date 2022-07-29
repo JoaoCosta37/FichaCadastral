@@ -1,9 +1,7 @@
-﻿function safeHtmlRenderer(instance, td, row, col, prop, value, cellProperties) {
+﻿function editLinkRenderer(instance, td, row, col, prop, value, cellProperties) {
     // be sure you only allow certain HTML tags to avoid XSS threats
     // (you should also remove unwanted HTML attributes)
-    td.innerHTML = Handsontable.helper.sanitize(value, {
-        ALLOWED_TAGS: ['em', 'b', 'strong', 'a', 'big'],
-    });
+    td.innerHTML = `<a href='CadastroFamilia/Editar?idFamilia=${value}'> Editar </a>`
 }
 
 function createGrid(data) {
@@ -33,7 +31,7 @@ function createGrid(data) {
             },
             {
                 data: 'IdFamilia',
-                renderer: safeHtmlRenderer
+                renderer: editLinkRenderer
             }
         ],
         dropdownMenu: true,
