@@ -32,7 +32,13 @@
 
         <div>
             <div class="input-container ic1">
-                <input id="nome" name="Responsavel.Nome" class="input" type="text" placeholder=" " />
+                <div id="teste" class="component-description-container">
+                    <label for="teste" class="component-name">Nome Completo</label>
+                </div>
+                <input id="teste" name="Responsavel.Nome" class="input" type="text"/>
+            </div>
+            <div class="input-container ic1">
+                <input id="nome" name="Responsavel.Nome" class="input" type="text"/>
                 <div class="cut"></div>
                 <label for="nome" class="placeholder">Nome Completo</label>
             </div>
@@ -47,9 +53,9 @@
                 <label for="cpf" class="placeholder">CPF</label>
             </div>
             <div class="input-container ic2">
-                <input id="datepicker" name="Responsavel.DataNascimento" class="input" title="datepicker" style="width: 100%" placeholder=" " />
+                <input id="data-nascimento" name="Responsavel.DataNascimento" class="input" title="datepicker" style="width: 100%" placeholder=" " />
                 <div class="cut cut-short"></div>
-                <label for="datepicker" class="placeholder">Data de Nascimento</label>
+                <label for="data-nascimento" class="placeholder">Data de Nascimento</label>
 
             </div>
             <div class="input-container ic2">
@@ -89,11 +95,6 @@
                 <div class="cut cut-short"></div>
                 <label for="estado-civil" class="placeholder">Estado Civil</label>
             </div>
-            @*<div class="input-container ic2">
-                <input id="email" class="input" type="text" placeholder=" " />
-                <div class="cut cut-short"></div>
-                <label for="email" class="placeholder">Nome do Conjuge</label>
-                </div>*@
             <div class="input-container ic2">
                 <input id="situacao-emprego" name="Responsavel.SituacaoEmprego.Id" class="input" type="text" placeholder=" " />
                 <div class="cut cut-short"></div>
