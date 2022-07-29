@@ -36,6 +36,7 @@ namespace FichaCadastro
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<Familia, FamiliaViewModel>().ReverseMap();
+                cfg.CreateMap<Pessoa, PessoaViewModel>().ReverseMap();
             });
 
 
